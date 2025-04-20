@@ -3,7 +3,6 @@
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function SitePlanContent() {
-  const { language } = useLanguage();
 
   return (
     <div className="space-y-8">

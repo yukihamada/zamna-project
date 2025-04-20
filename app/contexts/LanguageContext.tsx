@@ -20,9 +20,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const keys = key.split('.');
     let value: unknown = translations[language];
     
-    for (const k of keys) {
+    for (const keyPart of keys) {
       if (value === undefined) return key;
-      value = value as Record<string, unknown>[k];
+      value = value as Record<string, unknown>[keyPart];
     }
     
     return (value as string) || key;

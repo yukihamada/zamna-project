@@ -26,7 +26,7 @@ export default function SponsorProposalContent() {
           1. エグゼクティブサマリー
         </h2>
         <p className="text-gray-200 leading-relaxed">
-          南国ハワイの都市型ロケーションで開催する EDM フェスティバル <strong>"Zamna Hawaii 2026"</strong>。5,000 人規模のプレミアム体験を通じ、ラグジュアリーかつサステナブルなブランド価値を企業パートナーと共創します。Founding / Carbon など 6 段階のスポンサーティアを用意し、会場・デジタル・メディアを横断した 360° アクティベーションを提供します。
+          南国ハワイの都市型ロケーションで開催する EDM フェスティバル <strong>&quot;Zamna Hawaii 2026&quot;</strong>。5,000 人規模のプレミアム体験を通じ、ラグジュアリーかつサステナブルなブランド価値を企業パートナーと共創します。Founding / Carbon など 6 段階のスポンサーティアを用意し、会場・デジタル・メディアを横断した 360° アクティベーションを提供します。
         </p>
       </section>
 
@@ -58,7 +58,7 @@ export default function SponsorProposalContent() {
 
       <h2>表紙</h2>
       <ul>
-        <li><strong>タイトル例</strong>: "Zamna Hawaii 2026 — Founding / Carbon Tier Sponsorship Proposal"</li>
+        <li><strong>タイトル例</strong>: &quot;Zamna Hawaii 2026 — Founding / Carbon Tier Sponsorship Proposal&quot;</li>
         <li><strong>提出日</strong>: 2026年 4月 20日</li>
         <li><strong>提出先</strong>: &lt;スポンサー企業名&gt;</li>
         <li><strong>提出者</strong>: Zamna Hawaii 運営事務局</li>
@@ -68,7 +68,7 @@ export default function SponsorProposalContent() {
 
       <h2>1. エグゼクティブサマリー</h2>
       <p>
-        南国ハワイの都市型ロケーションで開催する EDM フェスティバル "<strong>Zamna Hawaii 2026</strong>"。
+        南国ハワイの都市型ロケーションで開催する EDM フェスティバル &quot;<strong>Zamna Hawaii 2026</strong>&quot;。
         5,000 人規模のプレミアム体験を通じ、ラグジュアリーかつサステナブルなブランド価値を企業パートナーと共創します。
         Founding / Carbon など 6 段階のスポンサーティアを用意し、会場・デジタル・メディアを横断した 360° アクティベーションを提供します。
       </p>
@@ -98,7 +98,7 @@ export default function SponsorProposalContent() {
           <tr><td>開催日</td><td><strong>2026 年 10 月 3 日（土）– 10 月 4 日（日）</strong></td></tr>
           <tr><td>会場</td><td><strong>Kakaʻako Waterfront Park</strong>（オーシャンフロント 11 acre）</td></tr>
           <tr><td>目標動員</td><td><strong>5,000 名</strong>（1 日あたり 2,500 名）</td></tr>
-          <tr><td>コンセプト</td><td>"Island‑tech Eden" — 南国と最新テクノロジーの融合</td></tr>
+          <tr><td>コンセプト</td><td>&quot;Island‑tech Eden&quot; — 南国と最新テクノロジーの融合</td></tr>
           <tr><td>特徴</td><td>カーボンニュートラル運営／RFID キャッシュレス／NFT 記念パス</td></tr>
         </tbody>
       </table>
@@ -140,7 +140,7 @@ export default function SponsorProposalContent() {
       <h3>5.2 ティア別詳細抜粋</h3>
       <h4>Founding Partner</h4>
       <ul>
-        <li>"Zamna Hawaii 2026 presented by &lt;Sponsor&gt;" 表記権</li>
+        <li>&quot;Zamna Hawaii 2026 presented by &lt;Sponsor&gt;&quot; 表記権</li>
         <li>メインステージ命名権 & キービジュアル最上位ロゴ</li>
         <li>VIP ラウンジ 200 m² フルブランディング</li>
         <li>バックステージ & アーティストエリアアクセス <strong>20 名</strong></li>

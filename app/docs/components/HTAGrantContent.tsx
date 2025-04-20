@@ -3,7 +3,6 @@
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function HTAGrantContent() {
-  const { language } = useLanguage();
 
   return (
     <div className="space-y-12">
