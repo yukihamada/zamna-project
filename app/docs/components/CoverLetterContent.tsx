@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 export default function CoverLetterContent() {
   return (
     <div className="space-y-6 prose prose-invert max-w-none">
@@ -54,7 +56,7 @@ export default function CoverLetterContent() {
         Enclosed with this application, you will find our complete event plan, including site layouts, security plans, insurance certificates, and all other required documentation. Our team has extensive experience producing similar events internationally, and we are committed to working closely with HCDA and all relevant agencies to ensure a successful and compliant event.
       </p>
       <p>
-        We believe that ZAMNA Hawaii 2026 aligns perfectly with HCDA's mission to create vibrant communities while respecting the cultural and environmental significance of Kakaʻako. We look forward to the opportunity to bring this world-class event to Hawaii and to establishing a long-term relationship with HCDA and the local community.
+        We believe that ZAMNA Hawaii 2026 aligns perfectly with HCDA&apos;s mission to create vibrant communities while respecting the cultural and environmental significance of Kakaʻako. We look forward to the opportunity to bring this world-class event to Hawaii and to establishing a long-term relationship with HCDA and the local community.
       </p>
       <p>
         Thank you for your consideration of our application. Please feel free to contact me directly with any questions or requests for additional information.
