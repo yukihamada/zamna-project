@@ -12,6 +12,17 @@ export interface Doc {
 
 export const docs: Doc[] = [
   { 
+    slug: 'contract-draft', 
+    category: '保険・契約', 
+    categoryEn: 'Insurance & Contracts',
+    title: 'Zamna・現地法人間契約書ドラフト', 
+    titleEn: 'Zamna-Local Entity Contract Draft',
+    target: '契約管理', 
+    targetEn: 'Contract Management',
+    description: 'Zamnaと現地法人間の共同制作・興行契約書ドラフト（英日バイリンガル）',
+    descriptionEn: 'Heads of Agreement draft between Zamna and local entity (bilingual EN-JP)'
+  },
+  { 
     slug: 'business-plan', 
     category: '企画・資金', 
     categoryEn: 'Planning & Funding',
