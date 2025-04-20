@@ -3,6 +3,11 @@
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import { use } from 'react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { docs } from '../data';
+import PDFDownloadButton from '@/app/components/PDFDownloadButton';
+
+// Import all document components
 import BusinessPlanContent from '../components/BusinessPlanContent';
 import SponsorProposalContent from '../components/SponsorProposalContent';
 import SitePlanContent from '../components/SitePlanContent';
@@ -11,11 +16,16 @@ import CoverLetterContent from '../components/CoverLetterContent';
 import HTAGrantContent from '../components/HTAGrantContent';
 import StaffHandbookContent from '../components/StaffHandbookContent';
 import SafetyPlanContent from '../components/SafetyPlanContent';
+import SecurityRosterContent from '../components/SecurityRosterContent';
+import CrowdFirePlanContent from '../components/CrowdFirePlanContent';
 
 export default function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
   const { slug } = use(params);
 
+  // Find the current document from the data
+  const currentDoc = docs.find(doc => doc.slug === slug);
+  
   const renderContent = () => {
     switch (slug) {
       case 'business-plan':
@@ -35,36 +45,71 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
       case 'safety-plan':
         return <SafetyPlanContent />;
       case 'security-roster':
-        return <StaffHandbookContent />;
+        return <SecurityRosterContent />;
       case 'crowd-fire-plan':
-        return <SafetyPlanContent />;
+        return <CrowdFirePlanContent />;
       default:
-        return <div className="text-gray-600">{t('docs.comingSoon')}</div>;
+        return (
+          <div className="py-12 text-center">
+            <div className="text-4xl mb-4">🚧</div>
+            <h3 className="text-xl font-semibold mb-2">
+              {language === 'en' ? 'Coming Soon' : '準備中'}
+            </h3>
+            <p className="text-gray-400">
+              {language === 'en' 
+                ? 'This document is currently being prepared and will be available soon.' 
+                : 'このドキュメントは現在準備中で、まもなく利用可能になります。'}
+            </p>
+          </div>
+        );
     }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-32 px-4">
       <div className="container mx-auto max-w-4xl">
-        <div className="mb-8">
-          <Link href="/docs" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-            {t('docs.backToDocuments')}
+        <div className="mb-8 flex justify-between items-center">
+          <Link 
+            href="/docs" 
+            className="text-blue-400 hover:text-blue-300 flex items-center gap-2 transition-colors"
+          >
+            <ArrowLeft size={18} />
+            {language === 'en' ? 'Back to Documents' : 'ドキュメント一覧に戻る'}
           </Link>
+          
+          <PDFDownloadButton 
+            contentId="document-content" 
+            fileName={`zamna-hawaii-2026-${slug}`} 
+          />
         </div>
 
-        <h1 className="text-3xl font-bold mb-6">{t(`docs.${slug}.title`)}</h1>
+        <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 p-6 rounded-xl mb-8 border border-white/10">
+          <h1 className="text-3xl font-bold mb-6">
+            {language === 'en' ? currentDoc?.titleEn : currentDoc?.title}
+          </h1>
 
-        <div className="mb-8">
-          <div className="text-sm text-gray-400 mb-1">{t('docs.category')}</div>
-          <div className="font-medium text-white">{t(`docs.${slug}.category`)}</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <div className="text-sm text-gray-400 mb-1">
+                {language === 'en' ? 'Category' : 'カテゴリー'}
+              </div>
+              <div className="font-medium text-white">
+                {language === 'en' ? currentDoc?.categoryEn : currentDoc?.category}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-sm text-gray-400 mb-1">
+                {language === 'en' ? 'Target' : '提出先'}
+              </div>
+              <div className="font-medium text-white">
+                {language === 'en' ? currentDoc?.targetEn : currentDoc?.target}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mb-12">
-          <div className="text-sm text-gray-400 mb-1">{t('docs.target')}</div>
-          <div className="font-medium text-white">{t(`docs.${slug}.target`)}</div>
-        </div>
-
-        <div className="prose prose-invert max-w-none bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+        <div id="document-content" className="prose prose-invert max-w-none bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-lg">
           {renderContent()}
         </div>
       </div>
