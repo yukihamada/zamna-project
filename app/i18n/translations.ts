@@ -38,6 +38,18 @@ export const translations = {
           // ... 他のセクションも同様に追加
         }
       },
+      'business-plan': {
+        title: '最新ビジネスプラン／P&Lサマリー',
+        category: '企画・資金',
+        target: '社内稟議・スポンサー説明',
+        description: 'イベント全体のビジネスプランと損益計算をサマリー形式で掲載しています。'
+      },
+      'sponsor-proposal': {
+        title: 'スポンサー提案書（Founding／Carbon Tier 等）',
+        category: '企画・資金',
+        target: '企業スポンサー',
+        description: '企業スポンサー向け提案書テンプレート。'
+      },
       sponsorProposal: {
         title: 'スポンサー提案書',
         sections: {
@@ -187,6 +199,22 @@ export const translations = {
       }
     }
   },
+  contact: {
+    title: 'お問い合わせ',
+    description: 'ご質問やご相談は以下の連絡先までお気軽にご連絡ください。',
+    email: {
+      label: 'メール',
+      value: 'info@zamna.dev',
+    },
+    phone: {
+      label: '電話',
+      value: '+1-808-555-1234',
+    },
+    address: {
+      label: '住所',
+      value: 'Kakaʻako Waterfront Park, Honolulu, HI',
+    },
+  },
   en: {
     docs: {
       backToDocuments: '← Back to Documents',
@@ -225,6 +253,18 @@ export const translations = {
           },
           // ... other sections similarly added
         }
+      },
+      'business-plan': {
+        title: 'Latest Business Plan & P/L Summary',
+        category: 'Planning & Funding',
+        target: 'Internal Approval & Sponsor Description',
+        description: 'This document summarizes the business plan and profit and loss calculation for the entire event.'
+      },
+      'sponsor-proposal': {
+        title: 'Sponsor Proposal (Founding/Carbon Tier etc.)',
+        category: 'Planning & Funding',
+        target: 'Corporate Sponsor',
+        description: 'Sponsor proposal template for corporate sponsors.'
       },
       sponsorProposal: {
         title: 'Sponsor Proposal',
@@ -329,6 +369,22 @@ export const translations = {
       docs: 'View Documentation',
       contact: 'Contact Us'
     },
+    contact: {
+      title: 'Contact Us',
+      description: 'For inquiries please reach out via the channels below.',
+      email: {
+        label: 'Email',
+        value: 'info@zamna.dev',
+      },
+      phone: {
+        label: 'Phone',
+        value: '+1-808-555-1234',
+      },
+      address: {
+        label: 'Address',
+        value: 'Kakaʻako Waterfront Park, Honolulu, HI',
+      },
+    },
     milestones: {
       title: 'Project Milestones',
       items: {
@@ -372,6 +428,86 @@ export const translations = {
           title: 'ZAMNA Hawaii',
           description: "Hawaii's first major EDM festival"
         }
+      }
+    },
+    // Duplicate sponsorProposal at top-level for component compatibility
+    sponsorProposal: {
+      title: 'Sponsor Proposal',
+      overview: {
+        title: 'Event Overview',
+        description: 'ZAMNA Hawaii 2026 is Hawaii\'s first major EDM festival, innovatively combining music, culture, and sustainability.'
+      },
+      tiers: {
+        title: 'Sponsorship Tiers',
+        founding: {
+          title: 'Founding Partner',
+          description: 'As a core partner of the event, receive the highest level of exposure and branding opportunities.',
+          benefits: {
+            0: 'Main stage naming rights and branding',
+            1: 'VIP area dedicated lounge space',
+            2: 'Priority placement in all advertising and PR materials',
+            3: 'Logo display on official website and SNS',
+            4: 'Credit mention in press releases'
+          }
+        },
+        carbon: {
+          title: 'Carbon-Neutral Partner',
+          description: 'Enhance brand value through sustainability initiatives and partnerships.',
+          benefits: {
+            0: 'Priority display on carbon offset certification',
+            1: 'Collaboration opportunities in sustainability initiatives',
+            2: 'PR exposure as an eco-conscious event partner',
+            3: 'Featured page on official website'
+          }
+        },
+        supporting: {
+          title: 'Supporting Partner',
+          description: 'Sponsorship opportunities focused on specific areas or domains.',
+          benefits: {
+            0: 'Brand exposure in designated areas',
+            1: 'Social media promotion collaboration',
+            2: 'Original content creation rights'
+          }
+        }
+      },
+      audience: {
+        title: 'Target Audience',
+        demographics: {
+          title: 'Attendee Demographics',
+          labels: {
+            0: 'Age',
+            1: 'Income',
+            2: 'Education',
+            3: 'Location'
+          },
+          values: {
+            0: '25-40 years (Average 32)',
+            1: '$80,000+ earn 65%',
+            2: 'University graduates 85%',
+            3: '40% North America, 30% Asia, 20% Europe, 10% Others'
+          }
+        },
+        reach: {
+          title: 'Reach',
+          labels: {
+            0: 'On-site Attendance',
+            1: 'Social Media Reach',
+            2: 'Media Coverage',
+            3: 'Streaming Viewers'
+          },
+          values: {
+            0: '5,000',
+            1: '1M+',
+            2: '50+ major outlets',
+            3: '250K expected'
+          }
+        }
+      },
+      contact: {
+        title: 'Contact',
+        description: 'For detailed sponsorship materials and individual consultations, please contact us through the following:',
+        email: { label: 'Email' },
+        phone: { label: 'Phone' }
       }
     }
   }

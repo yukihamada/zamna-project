@@ -136,7 +136,7 @@ export default function Home() {
           </h2>
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
-              {[1, 2, 3].map((num) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <div key={num} className="flex gap-4 items-start group">
                   <div className="w-12 h-12 bg-[#ea384c] text-white rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#ea384c]/20">
                     {num}
@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* Team Members Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-white">{t('team.title')}</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Documentation Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-white">{t('documentation.title')}</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -247,34 +247,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">{t('cta.title')}</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            {t('cta.subtitle')}
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Link 
-              href="/docs" 
-              className="px-8 py-3 bg-[#ea384c] text-white rounded-lg hover:bg-[#d12d40] transition-colors flex items-center gap-2"
-            >
-              <FileText className="w-5 h-5" />
-              {t('cta.docs')}
-            </Link>
-            <Link 
-              href="/contact" 
-              className="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors flex items-center gap-2"
-            >
-              <Users className="w-5 h-5" />
-              {t('cta.contact')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <Timeline />
     </main>
-  )
+  );
 }

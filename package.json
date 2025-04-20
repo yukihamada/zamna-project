@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc -p . --noEmit",
+    "gen-stubs": "node generate-stubs.js"
   },
   "dependencies": {
     "framer-motion": "^12.7.4",

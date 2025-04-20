@@ -12,7 +12,7 @@ export default function DocsIndex() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-32 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h1 className="text-4xl font-bold mb-12 text-center">{t('docs.title')}</h1>
+        <h1 className="text-4xl font-bold mb-12 text-center">{t('documentation.title')}</h1>
         {categories.map((cat) => (
           <div key={cat} className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 border-b border-white/20 pb-2 pl-1">{cat}</h2>
@@ -21,7 +21,7 @@ export default function DocsIndex() {
                 <Link
                   key={doc.slug}
                   href={`/docs/${doc.slug}`}
-                  className="group p-6 glass rounded-xl flex gap-4 items-start hover:bg-white/10 transition-colors"
+                  className="group p-6 bg-white/5 backdrop-blur-sm rounded-xl flex gap-4 items-start hover:bg-white/10 transition-colors border border-white/10"
                 >
                   <div className="w-10 h-10 flex-shrink-0 bg-[#ea384c] group-hover:bg-[#d12d40] text-white rounded-full flex items-center justify-center">
                     <FileText className="w-5 h-5" />
