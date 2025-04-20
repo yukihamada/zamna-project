@@ -14,13 +14,10 @@ export default function Header() {
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/" className="px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors">
-            Home
+            {language === 'en' ? 'Home' : 'ホーム'}
           </Link>
           <Link href="/docs" className="px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors">
-            Docs
-          </Link>
-          <Link href="/contact" className="px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors">
-            Contact
+            {language === 'en' ? 'Docs' : '資料'}
           </Link>
           <button
             onClick={() => setLanguage(language === 'en' ? 'ja' : 'en')}

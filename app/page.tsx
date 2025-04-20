@@ -44,13 +44,6 @@ export default function Home() {
               <FileText className="w-5 h-5" />
               {t('hero.docs')}
             </Link>
-            <Link 
-              href="/contact" 
-              className="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors flex items-center gap-2"
-            >
-              <Users className="w-5 h-5" />
-              {t('hero.team')}
-            </Link>
           </div>
         </div>
       </section>
