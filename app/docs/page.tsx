@@ -7,7 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function DocsIndex() {
   const categories = Array.from(new Set(docs.map((d) => d.category)));
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-32 px-4">
@@ -28,10 +28,15 @@ export default function DocsIndex() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-1 group-hover:underline underline-offset-4">
-                      {doc.title}
+                      {language === 'en' && t(`docs.${doc.slug}.title`) ? t(`docs.${doc.slug}.title`) : doc.title}
                     </h3>
-                    <p className="text-sm text-gray-300 mb-1">提出先: {doc.target}</p>
-                    <p className="text-sm text-gray-400 line-clamp-2">{doc.description}</p>
+                    <p className="text-sm text-gray-300 mb-1">
+                      {language === 'en' ? 'Target: ' : '提出先: '}
+                      {language === 'en' && t(`docs.${doc.slug}.target`) ? t(`docs.${doc.slug}.target`) : doc.target}
+                    </p>
+                    <p className="text-sm text-gray-400 line-clamp-2">
+                      {language === 'en' && t(`docs.${doc.slug}.description`) ? t(`docs.${doc.slug}.description`) : doc.description}
+                    </p>
                   </div>
                 </Link>
               ))}
@@ -41,4 +46,4 @@ export default function DocsIndex() {
       </div>
     </div>
   );
-} 
+}
