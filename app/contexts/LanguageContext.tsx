@@ -20,10 +20,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const keys = key.split('.');
     let value: unknown = translations[language];
     
-    for (const keyPart of keys) {
-      if (value === undefined) return key;
-      value = value as Record<string, unknown>[keyPart];
-    }
+    // Using reduce to navigate through the object using the keys
+    value = keys.reduce((obj, keyPart) => {
+      if (obj === undefined) return undefined;
+      return (obj as Record<string, unknown>)[keyPart];
+    }, value);
     
     return (value as string) || key;
   };
