@@ -11,6 +11,27 @@ interface PDFDownloadButtonProps {
   fileName: string;
 }
 
+// Helper function to convert oklch to RGB
+function convertOklchToRgb(oklchStr: string): string {
+  // Default fallback color if conversion fails
+  const fallbackColor = '#ffffff';
+  
+  try {
+    // Simple replacement for oklch colors - convert to standard RGB
+    if (oklchStr.includes('oklch')) {
+      // For simplicity, we'll map common oklch values to hex colors
+      if (oklchStr.includes('0.2')) return '#1a1a1a'; // Dark background
+      if (oklchStr.includes('0.9')) return '#ffffff'; // White text
+      if (oklchStr.includes('0.6')) return '#2563eb'; // Blue buttons
+      return fallbackColor;
+    }
+    return oklchStr;
+  } catch (e) {
+    console.warn('Failed to convert color:', oklchStr);
+    return fallbackColor;
+  }
+}
+
 export default function PDFDownloadButton({ contentId, fileName }: PDFDownloadButtonProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const { language } = useLanguage();
@@ -32,6 +53,45 @@ export default function PDFDownloadButton({ contentId, fileName }: PDFDownloadBu
       clone.style.width = `${contentElement.offsetWidth}px`;
       clone.style.padding = '20px';
       clone.style.backgroundColor = '#1a1a1a';
+      
+      // Fix color functions that jsPDF doesn't support
+      const allElements = clone.querySelectorAll('*');
+      allElements.forEach(el => {
+        const element = el as HTMLElement;
+        const computedStyle = window.getComputedStyle(element);
+        
+        // Convert any oklch colors to RGB
+        const color = computedStyle.color;
+        const bgColor = computedStyle.backgroundColor;
+        const borderColor = computedStyle.borderColor;
+        
+        // Replace with RGB values
+        element.style.color = color.includes('oklch') ? convertOklchToRgb(color) : color;
+        element.style.backgroundColor = bgColor.includes('oklch') ? convertOklchToRgb(bgColor) : bgColor;
+        element.style.borderColor = borderColor.includes('oklch') ? convertOklchToRgb(borderColor) : borderColor;
+        
+        // Remove any tailwind classes that might use oklch
+        if (element.className && typeof element.className === 'string') {
+          const classesToRemove = [
+            'bg-blue-600', 'hover:bg-blue-700', 'bg-blue-500', 'hover:bg-blue-600',
+            'text-blue-500', 'hover:text-blue-600', 'border-blue-500'
+          ];
+          classesToRemove.forEach(cls => {
+            if (element.classList.contains(cls)) {
+              element.classList.remove(cls);
+              if (cls.includes('blue') && cls.includes('bg')) {
+                element.style.backgroundColor = '#2563eb'; // Standard hex for blue
+              }
+              if (cls.includes('blue') && cls.includes('text')) {
+                element.style.color = '#2563eb';
+              }
+              if (cls.includes('blue') && cls.includes('border')) {
+                element.style.borderColor = '#2563eb';
+              }
+            }
+          });
+        }
+      });
       
       // Temporarily append to body but hide it
       clone.style.position = 'absolute';
@@ -85,7 +145,8 @@ export default function PDFDownloadButton({ contentId, fileName }: PDFDownloadBu
     <button
       onClick={generatePDF}
       disabled={isGenerating}
-      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      style={{ backgroundColor: '#2563eb' }}
+      className="flex items-center gap-2 text-white py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
     >
       <Download size={18} />
       {isGenerating 

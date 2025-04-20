@@ -19,6 +19,8 @@ import SafetyPlanContent from '../components/SafetyPlanContent';
 import SecurityRosterContent from '../components/SecurityRosterContent';
 import CrowdFirePlanContent from '../components/CrowdFirePlanContent';
 import ContractDraftContent from '../components/ContractDraftContent';
+import ArtistContractContent from '../components/ArtistContractContent';
+import SponsorshipAgreementContent from '../components/SponsorshipAgreementContent';
 
 export default function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { language } = useLanguage();
@@ -51,6 +53,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         return <CrowdFirePlanContent />;
       case 'contract-draft':
         return <ContractDraftContent />;
+      case 'artist-contract':
+        return <ArtistContractContent />;
+      case 'sponsorship-agreement':
+        return <SponsorshipAgreementContent />;
       default:
         return (
           <div className="py-12 text-center">
