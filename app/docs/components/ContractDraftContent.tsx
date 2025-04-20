@@ -14,7 +14,7 @@ export default function ContractDraftContent() {
         </h1>
         <PDFDownloadButton 
           contentId="contract-content" 
-          filename={language === 'en' ? 'zamna-contract-draft.pdf' : 'zamna-契約書ドラフト.pdf'}
+          fileName={language === 'en' ? 'zamna-contract-draft' : 'zamna-契約書ドラフト'}
         />
       </div>
       
