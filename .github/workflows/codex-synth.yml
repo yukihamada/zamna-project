@@ -1,0 +1,44 @@
+name: Codex Synth
+
+on:
+  workflow_dispatch:   # 手動ボタン
+  schedule:
+    - cron:  '0 0 * * 1'   # 月曜 00:00（HST）に定期実行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ========== 0. ソース取得 ==========
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # 変更差分をコミットするので完全 clone
+
+      # ========== 1. 環境セットアップ ==========
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - run: npm i -g pnpm @openai/codex@latest
+
+      # ========== 2. Codex フルオート実行 ==========
+      - name: Run Codex (o3)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          codex -m o3 --approval-mode full-auto \
+          "Update /docs to include all current Hawaii permit PDFs \
+          and refresh the timeline diagram in README.md. \
+          When done, run pnpm format."
+
+      # ========== 3. 変更を push / PR ==========
+      - name: Commit & push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: codex‑bot
+          author_email: codex@example.com
+          message: "chore(docs): nightly Codex refresh 🚀"
+          push: --set-upstream origin codex/update-$(date +%Y%m%d)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 既定 PAT で OK 
