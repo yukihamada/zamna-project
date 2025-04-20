@@ -79,7 +79,7 @@ export default function DocsIndex() {
             </button>
           </div>
         ) : (
-          filteredCategories.map((cat, index) => {
+          filteredCategories.map((cat) => {
             const categoryIndex = categories.indexOf(cat);
             const categoryEnName = categoriesEn[categoryIndex];
             

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link'
-import { CheckCircle, AlertCircle, Clock, FileText, Users, Music, Leaf } from 'lucide-react'
+import { CheckCircle, AlertCircle, Clock, FileText, Music, Leaf } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from './contexts/LanguageContext'
 
