@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/app/contexts/LanguageContext';
-import { PDFDownloadButton } from '@/app/components/PDFDownloadButton';
+import PDFDownloadButton from '@/app/components/PDFDownloadButton';
 
 export default function ContractDraftContent() {
   const { language } = useLanguage();
