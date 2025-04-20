@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/app/contexts/LanguageContext';
+
 
 export default function HTAGrantContent() {
 

@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { CheckCircle, AlertCircle, Clock, FileText, Users, Music, Leaf } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from './contexts/LanguageContext'
-import { Suspense } from 'react'
-import Timeline from './components/Timeline'
+
 
 export default function Home() {
   const { t } = useLanguage();

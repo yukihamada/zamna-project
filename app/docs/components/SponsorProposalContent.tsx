@@ -150,7 +150,7 @@ export default function SponsorProposalContent() {
 
       <h4>Carbon Partner（各社 1 枠）</h4>
       <ul>
-        <li>"Carbon Neutral Lounge powered by &lt;Sponsor&gt;" ラウンジ命名</li>
+        <li>&quot;Carbon Neutral Lounge powered by &lt;Sponsor&gt;&quot; ラウンジ命名</li>
         <li>グリーンテック展示スペース <strong>30 m²</strong></li>
         <li>CO₂ オフセット証明書共同発行（目標削減 <strong>20 t</strong>）</li>
         <li>VIP <strong>30 枚</strong>、GA <strong>100 枚</strong></li>
