@@ -18,6 +18,7 @@ import StaffHandbookContent from '../components/StaffHandbookContent';
 import SafetyPlanContent from '../components/SafetyPlanContent';
 import SecurityRosterContent from '../components/SecurityRosterContent';
 import CrowdFirePlanContent from '../components/CrowdFirePlanContent';
+import ContractDraftContent from '../components/ContractDraftContent';
 
 export default function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { language } = useLanguage();
@@ -48,6 +49,8 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         return <SecurityRosterContent />;
       case 'crowd-fire-plan':
         return <CrowdFirePlanContent />;
+      case 'contract-draft':
+        return <ContractDraftContent />;
       default:
         return (
           <div className="py-12 text-center">
