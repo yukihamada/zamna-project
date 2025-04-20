@@ -9,6 +9,8 @@ import SitePlanContent from '../components/SitePlanContent';
 import UtilitiesPlanContent from '../components/UtilitiesPlanContent';
 import CoverLetterContent from '../components/CoverLetterContent';
 import HTAGrantContent from '../components/HTAGrantContent';
+import StaffHandbookContent from '../components/StaffHandbookContent';
+import SafetyPlanContent from '../components/SafetyPlanContent';
 
 export default function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { t } = useLanguage();
@@ -28,6 +30,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         return <CoverLetterContent />;
       case 'hta-grant':
         return <HTAGrantContent />;
+      case 'security-roster':
+        return <StaffHandbookContent />;
+      case 'crowd-fire-plan':
+        return <SafetyPlanContent />;
       default:
         return <div className="text-gray-600">{t('docs.comingSoon')}</div>;
     }
