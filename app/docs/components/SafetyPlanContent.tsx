@@ -191,7 +191,7 @@ export default function SafetyPlanContent() {
                 : '主要受け入れ病院にイベントが通知されています：'}
             </p>
             <ul className="list-disc pl-6">
-              <li><strong>Queen's Medical Center:</strong> 3.2 {language === 'en' ? 'miles from venue' : 'マイル（会場から）'}</li>
+              <li><strong>Queen&apos;s Medical Center:</strong> 3.2 {language === 'en' ? 'miles from venue' : 'マイル（会場から）'}</li>
               <li><strong>Straub Medical Center:</strong> 2.8 {language === 'en' ? 'miles from venue' : 'マイル（会場から）'}</li>
               <li><strong>Kapiolani Medical Center:</strong> 3.5 {language === 'en' ? 'miles from venue' : 'マイル（会場から）'}</li>
             </ul>

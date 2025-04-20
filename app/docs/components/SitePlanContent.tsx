@@ -1,10 +1,9 @@
 'use client';
 
 import { useLanguage } from '@/app/contexts/LanguageContext';
-import Image from 'next/image';
 
 export default function SitePlanContent() {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <div className="space-y-8">

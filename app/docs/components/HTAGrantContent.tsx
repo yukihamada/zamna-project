@@ -3,7 +3,7 @@
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export default function HTAGrantContent() {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <div className="space-y-12">
@@ -151,7 +151,7 @@ export default function HTAGrantContent() {
           <thead><tr><th>Event</th><th>Year</th><th>Attendance</th><th>KPI Achievements</th></tr></thead>
           <tbody>
             <tr><td>Zamna Mexico</td><td>2024</td><td>17,500</td><td>Profit 19 %, 92 % sat.</td></tr>
-            <tr><td>Zamna Barcelona</td><td>2023</td><td>20,000</td><td>85 % int'l guests</td></tr>
+            <tr><td>Zamna Barcelona</td><td>2023</td><td>20,000</td><td>85 % int&apos;l guests</td></tr>
           </tbody>
         </table>
         <hr />

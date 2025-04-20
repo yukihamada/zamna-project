@@ -195,7 +195,7 @@ export default function BusinessPlanContent() {
                 <td className="text-right py-2 text-gray-300">65</td>
               </tr>
               <tr className="border-b border-gray-700">
-                <td className="py-2 text-gray-300">NFT "Island Pass"</td>
+                <td className="py-2 text-gray-300">NFT &quot;Island Pass&quot;</td>
                 <td className="text-right py-2 text-gray-300">55</td>
               </tr>
               <tr className="border-b border-gray-700">
