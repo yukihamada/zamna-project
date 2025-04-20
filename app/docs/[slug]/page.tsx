@@ -30,6 +30,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         return <CoverLetterContent />;
       case 'hta-grant':
         return <HTAGrantContent />;
+      case 'staff-handbook':
+        return <StaffHandbookContent />;
+      case 'safety-plan':
+        return <SafetyPlanContent />;
       case 'security-roster':
         return <StaffHandbookContent />;
       case 'crowd-fire-plan':
