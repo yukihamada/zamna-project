@@ -6,16 +6,21 @@ import { FileText } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function DocsIndex() {
+  const { language } = useLanguage();
   const categories = Array.from(new Set(docs.map((d) => d.category)));
-  const { t, language } = useLanguage();
+  const categoriesEn = Array.from(new Set(docs.map((d) => d.categoryEn)));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-32 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h1 className="text-4xl font-bold mb-12 text-center">{t('documentation.title')}</h1>
-        {categories.map((cat) => (
+        <h1 className="text-4xl font-bold mb-12 text-center">
+          {language === 'en' ? 'Project Documentation' : 'プロジェクト資料'}
+        </h1>
+        {categories.map((cat, index) => (
           <div key={cat} className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 border-b border-white/20 pb-2 pl-1">{cat}</h2>
+            <h2 className="text-2xl font-semibold mb-6 border-b border-white/20 pb-2 pl-1">
+              {language === 'en' ? categoriesEn[index] : cat}
+            </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {docs.filter((d) => d.category === cat).map((doc) => (
                 <Link
@@ -28,14 +33,14 @@ export default function DocsIndex() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-1 group-hover:underline underline-offset-4">
-                      {language === 'en' && t(`docs.${doc.slug}.title`) ? t(`docs.${doc.slug}.title`) : doc.title}
+                      {language === 'en' ? doc.titleEn : doc.title}
                     </h3>
                     <p className="text-sm text-gray-300 mb-1">
                       {language === 'en' ? 'Target: ' : '提出先: '}
-                      {language === 'en' && t(`docs.${doc.slug}.target`) ? t(`docs.${doc.slug}.target`) : doc.target}
+                      {language === 'en' ? doc.targetEn : doc.target}
                     </p>
                     <p className="text-sm text-gray-400 line-clamp-2">
-                      {language === 'en' && t(`docs.${doc.slug}.description`) ? t(`docs.${doc.slug}.description`) : doc.description}
+                      {language === 'en' ? doc.descriptionEn : doc.description}
                     </p>
                   </div>
                 </Link>
